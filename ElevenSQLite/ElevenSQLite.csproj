@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{0E82A5C2-EFBC-40A7-BA7B-DB59DE9F5BFB}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ElevenSQLite</RootNamespace>
+    <AssemblyName>ElevenSQLite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ApplicationIcon>..\..\..\..\..\..\PROYECTOS\Iconos\Eleven\Eleven.ico</ApplicationIcon>
+    <NoWin32Manifest>False</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib">
+      <HintPath>..\..\..\..\..\..\PROYECTOS\SoluPYME\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\..\PROYECTOS\SoluPYME\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.2\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.2\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.2\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\Eleven\packages\System.Windows.Forms.Ribbon35.3.5.8.0\lib\net35\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Vs05StTabStrip, Version=1.0.2510.9868, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\ARCHIVOS\05 - Librerias\Vs05StTabsProvider\Vs05StTabsProvider\bin\Release\Vs05StTabStrip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ElevenCore\Articulo.cs" />
+    <Compile Include="ElevenCore\Banco.cs" />
+    <Compile Include="ElevenCore\Bodega.cs" />
+    <Compile Include="ElevenCore\Ciudad.cs" />
+    <Compile Include="ElevenCore\Comprobante.cs" />
+    <Compile Include="ElevenCore\CondicionPago.cs" />
+    <Compile Include="ElevenCore\DetalleComprobante.cs" />
+    <Compile Include="ElevenCore\DetalleDocumento.cs" />
+    <Compile Include="ElevenCore\Documento.cs" />
+    <Compile Include="ElevenCore\ElevenContext.cs" />
+    <Compile Include="ElevenCore\Empleado.cs" />
+    <Compile Include="ElevenCore\Empresa.cs" />
+    <Compile Include="ElevenCore\Estado.cs" />
+    <Compile Include="ElevenCore\EstadoDocumento.cs" />
+    <Compile Include="ElevenCore\Familia.cs" />
+    <Compile Include="ElevenCore\ImpresionDocumento.cs" />
+    <Compile Include="ElevenCore\InformeDiario.cs" />
+    <Compile Include="ElevenCore\IntegracionContable.cs" />
+    <Compile Include="ElevenCore\NuevaEmpresa.cs" />
+    <Compile Include="ElevenCore\Pais.cs" />
+    <Compile Include="ElevenCore\Permiso.cs" />
+    <Compile Include="ElevenCore\PermisoTipoDocumento.cs" />
+    <Compile Include="ElevenCore\Persistent.cs" />
+    <Compile Include="ElevenCore\Preferencias.cs" />
+    <Compile Include="ElevenCore\Seccion.cs" />
+    <Compile Include="ElevenCore\Sistema.cs" />
+    <Compile Include="ElevenCore\SQLiteConfiguration.cs" />
+    <Compile Include="ElevenCore\TarifaIVA.cs" />
+    <Compile Include="ElevenCore\TarifaRetencion.cs" />
+    <Compile Include="ElevenCore\Tercero.cs" />
+    <Compile Include="ElevenCore\TipoDocumento.cs" />
+    <Compile Include="ElevenCore\TipoDocumentoMaestro.cs" />
+    <Compile Include="ElevenCore\TipoMoneda.cs" />
+    <Compile Include="ElevenCore\UnidadComercial.cs" />
+    <Compile Include="ElevenCore\Usuario.cs" />
+    <Compile Include="ElevenForms\FrmBanco.cs" />
+    <Compile Include="ElevenForms\FrmBanco.Designer.cs">
+      <DependentUpon>FrmBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarTipoMoneda.cs" />
+    <Compile Include="ElevenForms\FrmBuscarTipoMoneda.Designer.cs">
+      <DependentUpon>FrmBuscarTipoMoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmAnularComprobante.cs" />
+    <Compile Include="ElevenForms\FrmAnularComprobante.Designer.cs">
+      <DependentUpon>FrmAnularComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmAnularDocumento.cs" />
+    <Compile Include="ElevenForms\FrmAnularDocumento.Designer.cs">
+      <DependentUpon>FrmAnularDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmArticulo.cs" />
+    <Compile Include="ElevenForms\FrmArticulo.Designer.cs">
+      <DependentUpon>FrmArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmAyudaTerminalPV.cs" />
+    <Compile Include="ElevenForms\FrmAyudaTerminalPV.Designer.cs">
+      <DependentUpon>FrmAyudaTerminalPV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarArticulo.cs" />
+    <Compile Include="ElevenForms\FrmBuscarArticulo.Designer.cs">
+      <DependentUpon>FrmBuscarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarArticuloTerminalPV.cs" />
+    <Compile Include="ElevenForms\FrmBuscarArticuloTerminalPV.Designer.cs">
+      <DependentUpon>FrmBuscarArticuloTerminalPV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarBanco.cs" />
+    <Compile Include="ElevenForms\FrmBuscarBanco.Designer.cs">
+      <DependentUpon>FrmBuscarBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarCiudad.cs" />
+    <Compile Include="ElevenForms\FrmBuscarCiudad.Designer.cs">
+      <DependentUpon>FrmBuscarCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarComprobante.cs" />
+    <Compile Include="ElevenForms\FrmBuscarComprobante.Designer.cs">
+      <DependentUpon>FrmBuscarComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarCondicionPago.cs" />
+    <Compile Include="ElevenForms\FrmBuscarCondicionPago.Designer.cs">
+      <DependentUpon>FrmBuscarCondicionPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarDocumento.cs" />
+    <Compile Include="ElevenForms\FrmBuscarDocumento.Designer.cs">
+      <DependentUpon>FrmBuscarDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarDocumentoComprobante.cs" />
+    <Compile Include="ElevenForms\FrmBuscarDocumentoComprobante.Designer.cs">
+      <DependentUpon>FrmBuscarDocumentoComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarEmpleado.cs" />
+    <Compile Include="ElevenForms\FrmBuscarEmpleado.Designer.cs">
+      <DependentUpon>FrmBuscarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarEstado.cs" />
+    <Compile Include="ElevenForms\FrmBuscarEstado.Designer.cs">
+      <DependentUpon>FrmBuscarEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarFamilia.cs" />
+    <Compile Include="ElevenForms\FrmBuscarFamilia.Designer.cs">
+      <DependentUpon>FrmBuscarFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarPais.cs" />
+    <Compile Include="ElevenForms\FrmBuscarPais.Designer.cs">
+      <DependentUpon>FrmBuscarPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarSeccion.cs" />
+    <Compile Include="ElevenForms\FrmBuscarSeccion.Designer.cs">
+      <DependentUpon>FrmBuscarSeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarTarifaIVA.cs" />
+    <Compile Include="ElevenForms\FrmBuscarTarifaIVA.Designer.cs">
+      <DependentUpon>FrmBuscarTarifaIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarTercero.cs" />
+    <Compile Include="ElevenForms\FrmBuscarTercero.Designer.cs">
+      <DependentUpon>FrmBuscarTercero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarTipoDocumento.cs" />
+    <Compile Include="ElevenForms\FrmBuscarTipoDocumento.Designer.cs">
+      <DependentUpon>FrmBuscarTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmBuscarUnidadComercial.cs" />
+    <Compile Include="ElevenForms\FrmBuscarUnidadComercial.Designer.cs">
+      <DependentUpon>FrmBuscarUnidadComercial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmCambiarConsecutivo.cs" />
+    <Compile Include="ElevenForms\FrmCambiarConsecutivo.Designer.cs">
+      <DependentUpon>FrmCambiarConsecutivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmCantidadTerminalPV.cs" />
+    <Compile Include="ElevenForms\FrmCantidadTerminalPV.Designer.cs">
+      <DependentUpon>FrmCantidadTerminalPV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmCiudad.cs" />
+    <Compile Include="ElevenForms\FrmCiudad.Designer.cs">
+      <DependentUpon>FrmCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmClaveAcceso.cs" />
+    <Compile Include="ElevenForms\FrmClaveAcceso.Designer.cs">
+      <DependentUpon>FrmClaveAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmCobrarPV.cs" />
+    <Compile Include="ElevenForms\FrmCobrarPV.Designer.cs">
+      <DependentUpon>FrmCobrarPV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmComboIVA.cs" />
+    <Compile Include="ElevenForms\FrmComboIVA.Designer.cs">
+      <DependentUpon>FrmComboIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmComboRetencion.cs" />
+    <Compile Include="ElevenForms\FrmComboRetencion.Designer.cs">
+      <DependentUpon>FrmComboRetencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmComprobante.cs" />
+    <Compile Include="ElevenForms\FrmComprobante.Designer.cs">
+      <DependentUpon>FrmComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmCondicionPago.cs" />
+    <Compile Include="ElevenForms\FrmCondicionPago.Designer.cs">
+      <DependentUpon>FrmCondicionPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmDescripcionLarga.cs" />
+    <Compile Include="ElevenForms\FrmDescripcionLarga.Designer.cs">
+      <DependentUpon>FrmDescripcionLarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmDescuentoDocumento.cs" />
+    <Compile Include="ElevenForms\FrmDescuentoDocumento.Designer.cs">
+      <DependentUpon>FrmDescuentoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmDocumento.cs" />
+    <Compile Include="ElevenForms\FrmDocumento.Designer.cs">
+      <DependentUpon>FrmDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmEmpleado.cs" />
+    <Compile Include="ElevenForms\FrmEmpleado.Designer.cs">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmEstado.cs" />
+    <Compile Include="ElevenForms\FrmEstado.Designer.cs">
+      <DependentUpon>FrmEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmFamilia.cs" />
+    <Compile Include="ElevenForms\FrmFamilia.Designer.cs">
+      <DependentUpon>FrmFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmImpresionDocumento.cs" />
+    <Compile Include="ElevenForms\FrmImpresionDocumento.Designer.cs">
+      <DependentUpon>FrmImpresionDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmIVADocumento.cs" />
+    <Compile Include="ElevenForms\FrmIVADocumento.Designer.cs">
+      <DependentUpon>FrmIVADocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmLogin.cs" />
+    <Compile Include="ElevenForms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPais.cs" />
+    <Compile Include="ElevenForms\FrmPais.Designer.cs">
+      <DependentUpon>FrmPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPanelArticulos.cs" />
+    <Compile Include="ElevenForms\FrmPanelArticulos.Designer.cs">
+      <DependentUpon>FrmPanelArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPanelComprobantes.cs" />
+    <Compile Include="ElevenForms\FrmPanelComprobantes.Designer.cs">
+      <DependentUpon>FrmPanelComprobantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPanelDocumentos.cs" />
+    <Compile Include="ElevenForms\FrmPanelDocumentos.Designer.cs">
+      <DependentUpon>FrmPanelDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPanelMaestros.cs" />
+    <Compile Include="ElevenForms\FrmPanelMaestros.Designer.cs">
+      <DependentUpon>FrmPanelMaestros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPanelTerceros.cs" />
+    <Compile Include="ElevenForms\FrmPanelTerceros.Designer.cs">
+      <DependentUpon>FrmPanelTerceros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmPreferencias.cs" />
+    <Compile Include="ElevenForms\FrmPreferencias.Designer.cs">
+      <DependentUpon>FrmPreferencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmSeccion.cs" />
+    <Compile Include="ElevenForms\FrmSeccion.Designer.cs">
+      <DependentUpon>FrmSeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmTarifaIVA.cs" />
+    <Compile Include="ElevenForms\FrmTarifaIVA.Designer.cs">
+      <DependentUpon>FrmTarifaIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmTercero.cs" />
+    <Compile Include="ElevenForms\FrmTercero.Designer.cs">
+      <DependentUpon>FrmTercero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmTerceroLite.cs" />
+    <Compile Include="ElevenForms\FrmTerceroLite.Designer.cs">
+      <DependentUpon>FrmTerceroLite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmTerminalPV.cs" />
+    <Compile Include="ElevenForms\FrmTerminalPV.Designer.cs">
+      <DependentUpon>FrmTerminalPV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmTipoDocumento.cs" />
+    <Compile Include="ElevenForms\FrmTipoDocumento.Designer.cs">
+      <DependentUpon>FrmTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmTipoMoneda.cs" />
+    <Compile Include="ElevenForms\FrmTipoMoneda.Designer.cs">
+      <DependentUpon>FrmTipoMoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenForms\FrmUnidadComercial.cs" />
+    <Compile Include="ElevenForms\FrmUnidadComercial.Designer.cs">
+      <DependentUpon>FrmUnidadComercial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElevenUtils\Arguments.cs" />
+    <Compile Include="ElevenUtils\CajonMonedero.cs" />
+    <Compile Include="ElevenUtils\ClientMethods.cs" />
+    <Compile Include="ElevenUtils\CSVWriter.cs" />
+    <Compile Include="ElevenUtils\Entorno.cs" />
+    <Compile Include="ElevenUtils\OrderItem.cs" />
+    <Compile Include="ElevenUtils\OrderTotal.cs" />
+    <Compile Include="ElevenUtils\RandomSNKGenerator.cs" />
+    <Compile Include="ElevenUtils\SerialInformation.cs" />
+    <Compile Include="ElevenUtils\SharedInformation.cs" />
+    <Compile Include="ElevenUtils\SNDelimiter.cs" />
+    <Compile Include="ElevenUtils\SNKeyLength.cs" />
+    <Compile Include="ElevenUtils\SNKeyNumLength.cs" />
+    <Compile Include="ElevenUtils\SoluPYMEInformation.cs" />
+    <Compile Include="ElevenUtils\Ticket.cs" />
+    <Compile Include="ElevenUtils\Util.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ElevenCore" />
+    <Folder Include="ElevenUtils" />
+    <Folder Include="ElevenForms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ElevenForms\FrmAnularDocumento.resx">
+      <DependentUpon>FrmAnularDocumento.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmArticulo.resx">
+      <DependentUpon>FrmArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmBanco.resx">
+      <DependentUpon>FrmBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmBuscarBanco.resx">
+      <DependentUpon>FrmBuscarBanco.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmBuscarTercero.resx">
+      <DependentUpon>FrmBuscarTercero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmBuscarTipoDocumento.resx">
+      <DependentUpon>FrmBuscarTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmCantidadTerminalPV.resx">
+      <DependentUpon>FrmCantidadTerminalPV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmCiudad.resx">
+      <DependentUpon>FrmCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmClaveAcceso.resx">
+      <DependentUpon>FrmClaveAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmCobrarPV.resx">
+      <DependentUpon>FrmCobrarPV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmComboIVA.resx">
+      <DependentUpon>FrmComboIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmComprobante.resx">
+      <DependentUpon>FrmComprobante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmCondicionPago.resx">
+      <DependentUpon>FrmCondicionPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmDescripcionLarga.resx">
+      <DependentUpon>FrmDescripcionLarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmDescuentoDocumento.resx">
+      <DependentUpon>FrmDescuentoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmDocumento.resx">
+      <DependentUpon>FrmDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmEmpleado.resx">
+      <DependentUpon>FrmEmpleado.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmEstado.resx">
+      <DependentUpon>FrmEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmFamilia.resx">
+      <DependentUpon>FrmFamilia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmIVADocumento.resx">
+      <DependentUpon>FrmIVADocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPais.resx">
+      <DependentUpon>FrmPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPanelArticulos.resx">
+      <DependentUpon>FrmPanelArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPanelComprobantes.resx">
+      <DependentUpon>FrmPanelComprobantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPanelDocumentos.resx">
+      <DependentUpon>FrmPanelDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPanelMaestros.resx">
+      <DependentUpon>FrmPanelMaestros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPanelTerceros.resx">
+      <DependentUpon>FrmPanelTerceros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmPreferencias.resx">
+      <DependentUpon>FrmPreferencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmSeccion.resx">
+      <DependentUpon>FrmSeccion.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmTarifaIVA.resx">
+      <DependentUpon>FrmTarifaIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmTercero.resx">
+      <DependentUpon>FrmTercero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmTerceroLite.resx">
+      <DependentUpon>FrmTerceroLite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmTipoDocumento.resx">
+      <DependentUpon>FrmTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmTipoMoneda.resx">
+      <DependentUpon>FrmTipoMoneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElevenForms\FrmUnidadComercial.resx">
+      <DependentUpon>FrmUnidadComercial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net40\System.Data.SQLite.Core.targets')" />
+</Project>
